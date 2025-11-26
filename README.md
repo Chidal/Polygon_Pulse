@@ -1,10 +1,5 @@
 # **Polygon Pulse**
 
-**Built for:** Polygon Buildathon – *From Launch to Fundraising*
-**License:** MIT
-
----
-
 ## **Overview**
 
 **Polygon Pulse** is an AI-powered, real-time on-chain analytics and fundraising intelligence dashboard built natively on **Polygon PoS** & **zkEVM**.
