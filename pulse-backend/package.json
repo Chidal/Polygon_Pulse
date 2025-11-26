@@ -1,5 +1,5 @@
 {
-  "name": "0g-voe-backend",
+  "name": "Pulse-backend",
   "version": "1.0.0",
   "scripts": {
     "start": "ts-node src/server.ts",
