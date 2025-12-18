@@ -4,6 +4,7 @@ import TransactionTracker from '@/components/TransactionTracker';
 import BlockExplorer from '@/components/BlockExplorer';
 import AIInsights from '@/components/AIInsights';
 import WalletConnect from '@/components/WalletConnect';
+import CrossChainOverview from '@/components/CrossChainOverview'; // Import the new component
 import { motion, Variants } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Transaction } from '@/types';
@@ -72,7 +73,7 @@ export default function Dashboard() {
         variants={fadeIn}
       >
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 drop-shadow-lg animate-pulse">
-          Pulse
+          Polygon Pulse
         </h1>
         <div className="flex items-center gap-3">
           <div
@@ -98,11 +99,11 @@ export default function Dashboard() {
           className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-400 to-pink-500 drop-shadow-md"
           variants={fadeIn}
         >
-          Real-Time 0G Chain Intelligence
+          Real-Time Polygon Chain Intelligence
         </motion.h2>
 
-        {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
+        {/* Feature Grid – Updated for 4 cards (AggLayer overview added) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-8">
           {/* Transaction Tracker */}
           <motion.div
             className="relative bg-gray-800/40 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-cyan-500/30 overflow-hidden group"
@@ -132,6 +133,14 @@ export default function Dashboard() {
             <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-yellow-600/10 opacity-0 group-hover:opacity-100 transition-opacity" />
             <AIInsights transactions={transactions} />
           </motion.div>
+
+          {/* AggLayer Cross-Chain Overview */}
+          <motion.div
+            variants={fadeIn}
+            whileHover={{ scale: 1.02 }}
+          >
+            <CrossChainOverview />
+          </motion.div>
         </div>
 
         {/* Connection Status Bar */}
@@ -142,8 +151,11 @@ export default function Dashboard() {
           transition={{ delay: 1 }}
         >
           <p className="text-sm text-gray-400">
-            Streaming live from <span className="text-cyan-400 font-mono">Polygon testnet</span> ·{' '}
+            Streaming live from <span className="text-cyan-400 font-mono">Polygon Mainnet</span> ·{' '}
             {transactions.length} events cached
+          </p>
+          <p className="text-xs text-gray-500 mt-2">
+            Mainnet Contract: <span className="font-mono text-cyan-400">0xd9aC52cCaD325f96398A06ADad409B30b3768d24</span>
           </p>
         </motion.div>
       </motion.main>
