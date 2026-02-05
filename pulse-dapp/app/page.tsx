@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import WalletConnect from '@/components/WalletConnect';
-import { motion, Variants } from 'framer-motion'; // Import Variants
+import { motion, Variants } from 'framer-motion'; 
 import { useState } from 'react';
 
-// Explicitly type variants as Variants
+
 const fadeIn: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {

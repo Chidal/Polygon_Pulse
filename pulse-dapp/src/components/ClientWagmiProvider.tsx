@@ -1,4 +1,4 @@
-"use client"; // Mark as Client Component since it uses React Query
+"use client"; 
 
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import { WagmiConfig, createConfig, http } from 'wagmi';
@@ -10,7 +10,7 @@ import { ReactNode } from 'react';
 const queryClient = new QueryClient();
 
 const config = createConfig({
-  chains: [mainnet], // Replace with 0G testnet chain config when available
+  chains: [mainnet], 
   transports: {
     [mainnet.id]: http(process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api'),
   },

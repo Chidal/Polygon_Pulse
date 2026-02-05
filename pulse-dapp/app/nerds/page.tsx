@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { motion, Variants } from 'framer-motion'; // ← import Variants
+import { motion, Variants } from 'framer-motion'; 
 import { ClipboardIcon, ArrowDownTrayIcon } from '@heroicons/react/24/solid';
 import { EventLog } from '@/types';
 
@@ -13,7 +13,7 @@ const fadeIn: Variants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut" as const, // ← this fixes the type error
+      ease: "easeOut" as const, 
     },
   },
 };
