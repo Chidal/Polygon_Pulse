@@ -1,0 +1,22 @@
+[
+  {
+    "id": "summarization-1",
+    "name": "Transaction Summarizer",
+    "type": "NLP",
+    "description": "Lightweight model to summarize on-chain transactions (e.g., 'Whale transfer of 1000 POL').",
+    "path": "inference/summarization.js",
+    "trainingScript": "training/scripts/train-summarizer.py",
+    "dataRequired": "training/data/tx-sample.csv",
+    "smartContractIntegration": "Can output hashed summaries for on-chain storage via ai-prediction-oracle.sol"
+  },
+  {
+    "id": "anomaly-detection-1",
+    "name": "Anomaly Detector",
+    "type": "ML",
+    "description": "Detects unusual patterns in yields/TVL (e.g., sudden whale rotations).",
+    "path": "inference/anomaly-detection.py",
+    "trainingScript": "training/scripts/train-anomaly.py",
+    "dataRequired": "training/data/yield-history.json",
+    "smartContractIntegration": "Predictions can trigger on-chain events in smart_contracts/"
+  }
+]
