@@ -1,9 +1,7 @@
-// src/components/AIInsights.tsx
-
 "use client";
 
 import { useState } from "react";
-import { motion, Variants } from "framer-motion";           // ← import Variants
+import { motion, Variants } from "framer-motion";          
 import { Transaction } from "@/types";
 import { Switch } from "@headlessui/react";
 import { BellIcon } from "@heroicons/react/24/solid";
@@ -16,7 +14,7 @@ const fadeIn: Variants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut" as const,        // ← this satisfies the strict Easing type
+      ease: "easeOut" as const,        
     },
   },
 };
@@ -39,7 +37,7 @@ const AIInsights: React.FC<AIInsightsProps> = ({ transactions }) => {
       className="space-y-4 h-full flex flex-col"
       initial="hidden"
       animate="visible"
-      variants={fadeIn}           // ← now perfectly typed
+      variants={fadeIn}          
     >
       <h2 className="text-2xl font-bold text-white text-shadow-glow">
         AI Insights
