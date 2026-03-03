@@ -11,6 +11,12 @@ import { streamEvents } from './services/blockchain';
 const app = express();
 const server = createServer(app);
 const wss = new WebSocketServer({ server });
+const aiInsightsRouter = require('./routes/ai-insights');
+
+
+
+
+app.use('/api/ai-insights', aiInsightsRouter);
 
 app.use(cors());
 app.use(express.json());
