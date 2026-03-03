@@ -1,22 +1,38 @@
 [
   {
-    "id": "summarization-1",
+    "id": "tx-summarizer-v1",
     "name": "Transaction Summarizer",
-    "type": "NLP",
-    "description": "Lightweight model to summarize on-chain transactions (e.g., 'Whale transfer of 1000 POL').",
+    "type": "rule-based + lightweight embedding",
+    "description": "Generates human-readable summaries of on-chain txs (e.g., 'Whale moved 500 POL to QuickSwap')",
     "path": "inference/summarization.js",
     "trainingScript": "training/scripts/train-summarizer.py",
-    "dataRequired": "training/data/tx-sample.csv",
-    "smartContractIntegration": "Can output hashed summaries for on-chain storage via ai-prediction-oracle.sol"
+    "trainedOutput": "training/outputs/summarizer-rules.json",
+    "inferenceType": "javascript",
+    "useCase": "AIInsights panel, real-time feeds",
+    "lastUpdated": "2026-03-03"
   },
   {
-    "id": "anomaly-detection-1",
-    "name": "Anomaly Detector",
-    "type": "ML",
-    "description": "Detects unusual patterns in yields/TVL (e.g., sudden whale rotations).",
+    "id": "anomaly-detector-v1",
+    "name": "Transaction Anomaly Detector",
+    "type": "statistical + z-score isolation",
+    "description": "Flags unusual volume, frequency or value patterns (whale moves, flash-loan like spikes)",
     "path": "inference/anomaly-detection.py",
     "trainingScript": "training/scripts/train-anomaly.py",
-    "dataRequired": "training/data/yield-history.json",
-    "smartContractIntegration": "Predictions can trigger on-chain events in smart_contracts/"
+    "trainedOutput": "training/outputs/anomaly-thresholds.npy",
+    "inferenceType": "python",
+    "useCase": "Risk alerts, fundraising intelligence",
+    "lastUpdated": "2026-03-03"
+  },
+  {
+    "id": "yield-risk-analyzer-v1",
+    "name": "DeFi Yield & Risk Analyzer",
+    "type": "rule + simple regression",
+    "description": "Compares current APY vs historical, flags migration opportunities or impermanent loss risk",
+    "path": "inference/yield-risk.py",
+    "trainingScript": "training/scripts/train-yield-risk.py",
+    "trainedOutput": "training/outputs/yield-baselines.npy",
+    "inferenceType": "python",
+    "useCase": "DeFi Yield Explorer enhancements",
+    "lastUpdated": "2026-03-03"
   }
 ]
