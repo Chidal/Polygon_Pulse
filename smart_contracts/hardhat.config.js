@@ -22,7 +22,7 @@ module.exports = {
   networks: {
     hardhat: {
       chainId: 31337,
-      // forking: { url: process.env.POLYGON_MAINNET_RPC_URL } // uncomment to fork Polygon
+      forking: { url: process.env.POLYGON_MAINNET_RPC_URL } 
     },
 
     amoy: {
