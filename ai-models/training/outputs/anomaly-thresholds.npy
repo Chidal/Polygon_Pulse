@@ -1,0 +1,6 @@
+import numpy as np
+# Simulated historical amounts
+historical = np.array([50, 80, 120, 200, 1000, 30000])  # example outliers
+mean = np.mean(historical)
+std = np.std(historical)
+np.save('outputs/anomaly-thresholds.npy', np.array([mean, std]))
